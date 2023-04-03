@@ -21,6 +21,11 @@ function onInputChange(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+
+  if (email.value === '' || textarea.value === '') {
+    alert('Please, fill in all fields!');
+    return;
+  }
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   console.log(savedData);
   localStorage.removeItem(STORAGE_KEY);
